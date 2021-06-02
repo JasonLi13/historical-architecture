@@ -84,8 +84,9 @@ body{
 }
 
 .link_country{
-    float: left;
     padding: 10px;
+    width: 25%;
+    overflow: hidden;
 }
 .footer{
     color: white;
