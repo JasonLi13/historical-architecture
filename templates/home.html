@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% for thing in row %}
+<div class='parallex' id='{{thing[1]}}' style = 'background-image: url({{thing[3]}})'>
+    <div class='align-middle'>
+        <span class='title'>
+            {{thing[1]}}
+        </span>
+    </div>
+</div>
+
+<div class='body-paragraph'>
+    <div class='body-title'>
+        {{thing[1]}}
+    </div>
+    <div class='body-text'>
+        {{thing[2]}}
+    </div>
+    <div class ='link_country one'>
+
+    </div>
+    <div class ='link_country two'>
+
+    </div>
+    <div class='link_country three'>
+
+    </div>
+    <div class='link_country four'>
+
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
