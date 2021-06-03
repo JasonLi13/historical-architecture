@@ -83,10 +83,18 @@ body{
     font-variant-caps: all-petite-caps;
 }
 
+.parent_link_country{
+    display:flex;
+}
+
 .link_country{
+    display: inline-block;
     padding: 10px;
     width: 25%;
-    overflow: hidden;
+    color: white;
+    font-variant-caps: all-petite-caps;
+    border: double whitesmoke;
+    text-align: center;
 }
 .footer{
     color: white;
