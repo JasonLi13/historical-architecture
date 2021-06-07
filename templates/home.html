@@ -1,36 +1,38 @@
 {% extends 'layout.html' %}
 {% block content %}
-{% for thing in row %}
-<div class='parallex' id='{{thing[1]}}' style = 'background-image: url({{thing[3]}})'>
+{% for ethnicityid in row %}
+<div class='parallex' id='{{ethnicityid[1]}}' style = 'background-image: url({{ethnicityid[3]}})'>
     <div class='align-middle'>
         <span class='title'>
-            {{thing[1]}}
+            {{ethnicityid[1]}}
         </span>
     </div>
 </div>
 
 <div class='body-paragraph'>
     <div class='body-title'>
-        {{thing[1]}}
+        {{ethnicityid[1]}}
     </div>
     <div class='body-text'>
-        {{thing[2]}}
+        {{ethnicityid[2]}}
     </div>
 </div>
 
 <div class= 'parent_link_country'>
+    {% for ethnicityid in row%}
     <span class = 'link_country'>
-        greek
+        {{ethnicityid[6]}}
     </span>
     <span class = 'link_country'>
-        roman
+        {{ethnicityid[6]}}
     </span>
     <span class = 'link_country'>
-        bezentine
+        {{ethnicityid[6]}}
     </span>
     <span class = 'link_country'>
-        bebolonian
+        {{ethnicityid[6]}}
     </span>
+    {% endfor %}
 </div>
 {% endfor %}
 {% endblock %}
