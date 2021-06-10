@@ -19,20 +19,12 @@
 </div>
 
 <div class= 'parent_link_country'>
-    {% for ethnicityid in row%}
+    {% for countryid in country[ethnicityid[0]-1] %}
     <span class = 'link_country'>
-        {{ethnicityid[6]}}
-    </span>
-    <span class = 'link_country'>
-        {{ethnicityid[6]}}
-    </span>
-    <span class = 'link_country'>
-        {{ethnicityid[6]}}
-    </span>
-    <span class = 'link_country'>
-        {{ethnicityid[6]}}
+        {{countryid[1]}}
     </span>
     {% endfor %}
 </div>
+
 {% endfor %}
 {% endblock %}
