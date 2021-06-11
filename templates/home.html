@@ -20,9 +20,10 @@
 
 <div class= 'parent_link_country'>
     {% for countryid in country[ethnicityid[0]-1] %}
-    <span class = 'link_country'>
+    <a href='\country' class = link_country>
         {{countryid[1]}}
-    </span>
+        <img class='country_img' src="{{countryid[2]}}" alt="{{countryid[1]}}">
+    </a>
     {% endfor %}
 </div>
 
