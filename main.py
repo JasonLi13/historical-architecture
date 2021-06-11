@@ -24,8 +24,8 @@ def home():
             ethinicty_country_item.append([i])
     return render_template('home.html', title = "Home Tab", row = rows, country=ethinicty_country_item)
 
-@app.route('/country')
-def country():
+@app.route('/country/<int:id>')
+def country(id):
     con = sql.connect("./historical_architecture.db")
     cur = con.cursor()
     cur.execute("SELECT * FROM Country ORDER BY id;")
