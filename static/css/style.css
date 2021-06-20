@@ -1,3 +1,4 @@
+/* nav bar */
 .topnav{
     background-color: black;
     overflow:hidden;
@@ -26,6 +27,8 @@ body{
     margin:0;
     background-color: black;
 }
+
+/* ethinicity page css*/
 .body-paragraph{
     padding-top: 10vh;
     padding-left: 2vw;
@@ -66,6 +69,8 @@ body{
     border-style: solid;
     border-color: black;
     font-variant-caps: all-petite-caps;
+    width: 100%;
+    text-align: center;
 }
 
 .body-text{
@@ -77,17 +82,17 @@ body{
 
 .body-title{
     color: white;
-    padding-top:20px;
-    padding-bottom: 20px;
+    padding-top:15px;
+    padding-bottom: 15px;
     font-size: 30px;
     font-variant-caps: all-petite-caps;
 }
 
-.parent_link_country{
+.parent-link-country{
     display:flex;
 }
 
-.link_country{
+.link-country{
     display: inline-block;
     padding: 10px;
     width: 25%;
@@ -99,19 +104,76 @@ body{
     text-decoration: none;
 }
 
-.link_country:hover{
+.link-country:hover{
     background-color: #ddd;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     transition: background-color 0.5s, color 0.3s;
 }
 
-.country_img{
+/* country page css */
+.country-img{
     width: 100%;
     height: 90%;
 }
 
+.top-picture{
+    width: 100%;
+    object-fit: cover;
+    height: 30vh;
+    object-position: 0% 40%;
 
+}
+
+.align-top{
+    position: absolute;
+    top:18%;
+    left:47%;
+    transform:translate(-50%,-50%);
+    width: 20vw;
+    align-items: center; 
+}
+
+.country-side{
+    width:10%;
+    background-color:rgb(20, 20, 20);
+    margin:0;
+    position: fixed;
+    height: 100%;
+    margin-top: 5vh;
+}
+
+.country-side-item{
+    color:white;
+    text-decoration: none;
+    position: relative;
+}
+.country-body{
+    margin-left: 10%;
+    border-style: solid;
+    background-color: black;
+    margin-right: 15vw;
+    padding-top: 10vh;
+    background-attachment: fixed;
+    padding-left: 2vw;
+}
+
+.line{
+    float: left;
+    opacity: 70%;
+}
+
+.country-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top:20px;
+    padding-bottom: 20px;
+    color: silver;
+    text-align: left;
+    opacity: 50%;
+    padding-bottom: 30vh;
+}
+
+/* footer */
 .footer{
     color: white;
     font-size: 25px;   

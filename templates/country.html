@@ -1,6 +1,39 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+<div class ='country-side' >
+    <a href='#about' class='country-side-item'>ABOUT</a>
+</div>
 
+<embed class= 'top-picture' src= "{{item[6]}}">
+<div class='align-top'>
+    <div class='title'>
+        {{item[1]}}
+    </div>
+</div>
+
+<div class='country-body'>
+    <div class='body-title' id =about>
+        about
+    </div>
+    <hr style='width:200px' class ='line'>
+    <div class='country-text'>
+        {{item[2]}}
+    </div>
+    <div class='body-title'>
+        history
+    </div>
+    <hr style='width:200px' class ='line'>
+    <div class='country-text'>
+        {{item[3]}}
+    </div>
+    <div class='body-title'>
+        geography
+    </div>
+    <hr style='width:200px' class ='line'>
+    <div class='country-text'>
+        {{item[4]}}
+    </div>
+</div>
 
 {% endblock %}

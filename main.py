@@ -28,8 +28,11 @@ def home():
 def country(id):
     con = sql.connect("./historical_architecture.db")
     cur = con.cursor()
-    cur.execute("SELECT * FROM Country ORDER BY id;")
-    return render_template('country.html', title = "country Tab")
+    cur.execute("SELECT * FROM Country;")
+    rows = cur.fetchall(); 
+    items = (rows[id-1])
+    print(rows[id-1])
+    return render_template('country.html', title = "Country Tab", row = rows, item = items)
 
 
 if __name__ == "__main__":
