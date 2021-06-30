@@ -22,7 +22,7 @@ def home():
         else:
             t = i[0]
             ethinicty_country_item.append([i])
-    return render_template('home.html', title = "Home Tab", row = rows, country=ethinicty_country_item)
+    return render_template('home.html', title = "Home Tab", row = rows, country=ethinicty_country_item, url='/')
 
 @app.route('/country/<int:id>')
 def country(id):
