@@ -180,7 +180,7 @@ body{
 
 
 .country-body{
-    margin-left: 7%;
+    margin-left: 10%;
     border-style: solid;
     background-color: black;
     margin-right: 15vw;
@@ -202,6 +202,22 @@ body{
     text-align: left;
     opacity: 50%;
     padding-bottom: 30vh;
+}
+
+.button_country{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 23px;
+    font-variant-caps: all-petite-caps;
+}
+
+.country-footer{
+    color: white;
+    font-size: 25px;  
+    margin-left: 7%; 
 }
 
 /* footer */

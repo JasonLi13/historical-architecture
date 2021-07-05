@@ -1,3 +1,11 @@
+{% if request.path == '/' %}
 <div class='footer'>
     &copy; Jason Li 2021
 </div>
+{% endif %}
+
+{% if request.path == '/country/{{item[0]}}' %}
+    <div class='country-footer'>
+        &copy; Jason Li 2021
+    </div>   
+{% endif %}

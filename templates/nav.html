@@ -1,12 +1,49 @@
-{% if url == '/' %}
+{% if request.path == '/' %}
 <div class='topnav'>
     <a href="#antiquity" class='button'>ANTIQUITY</a>
     <a href="#islamic" class='button'>ISLAMIC</a> 
     <a href="#americas" class='button'>AMERICAS</a>
     <a href="#asia" class='button'>ASIA</a>
     <a href="#european" class='button'>EUROPEAN</a>
-    <a href="/search" class='search'></a>
 </div>
 {% endif %}
 
-{% if url == '1' %}
+{% if request.path == '/country/1' or request.path == '/country/2' or request.path == '/country/11' or request.path == '/country/12' %}
+<div class='topnav'>
+    {% for id1_item in id1 %}
+    <a href="/country/{{id1_item[0]}}" class='button_country'>{{id1_item[1]}}</a>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if request.path == '/country/3' or request.path == '/country/4' or request.path == '/country/13' or request.path == '/country/14' %}
+<div class='topnav'>
+    {% for id1_item in id2 %}
+    <a href="/country/{{id1_item[0]}}" class='button_country'>{{id1_item[1]}}</a>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if request.path == '/country/7' or request.path == '/country/8' or request.path == '/country/17' or request.path == '/country/18' %}
+<div class='topnav'>
+    {% for id1_item in id3 %}
+    <a href="/country/{{id1_item[0]}}" class='button_country'>{{id1_item[1]}}</a>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if request.path == '/country/9' or request.path == '/country/10' or request.path == '/country/15' or request.path == '/country/16' %}
+<div class='topnav'>
+    {% for id1_item in id4 %}
+    <a href="/country/{{id1_item[0]}}" class='button_country'>{{id1_item[1]}}</a>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if request.path == '/country/5' or request.path == '/country/6' or request.path == '/country/19' or request.path == '/country/20' %}
+<div class='topnav'>
+    {% for id1_item in id5 %}
+    <a href="/country/{{id1_item[0]}}" class='button_country'>{{id1_item[1]}}</a>
+    {% endfor %}
+</div>
+{% endif %}
