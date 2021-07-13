@@ -22,6 +22,7 @@ def home():
         else:
             t = i[0]
             ethinicty_country_item.append([i])
+    print(ethinicty_country_item)
     return render_template('home.html', title = "Home Tab", row = rows, country=ethinicty_country_item, url = '/')
 
 @app.route('/country/<int:id>')
@@ -31,24 +32,20 @@ def country(id):
     cur.execute("SELECT * FROM Country;")
     rows = cur.fetchall(); 
     items = (rows[id-1])
-    id1s = []
-    id2s = []
-    id3s = []
-    id4s = []
-    id5s = []
-    for i in rows:
-        if i[5] == 1:
-            id1s.append(i)
-        elif i[5] == 2:
-            id2s.append(i)
-        elif i[5] == 3:
-            id3s.append(i)
-        elif i[5] == 4:
-            id4s.append(i)
-        elif i[5] == 5:
-            id5s.append(i)
-    return render_template('country.html', title = "Country Tab", row = rows, item = items, id1 = id1s, id2 = id2s, id3 = id3s, id4 = id4s, id5 = id5s)
+    cur.execute("SELECT ethnicityid, id, name FROM Country ORDER BY ethnicityid;")
+    row2s = cur.fetchall();
+    print (row2s)
+    id = []
+    t = None
+    for i in row2s:
+        if i[0] == t:
+            id[-1].append(i)
+        else:
+            t = i[0]
+            id.append([i])
+    print(id)
+    return render_template('country.html', title = "Country Tab", row = rows, item = items, id1 = id[0], id2 = id[1], id3 = id[2], id4 = id[3], id5 = id[4])
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     app.run(debug = True)
