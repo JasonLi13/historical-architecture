@@ -23,7 +23,7 @@ def home():
             t = i[0]
             ethinicty_country_item.append([i])
     print(ethinicty_country_item)
-    return render_template('home.html', title = "Home Tab", row = rows, country=ethinicty_country_item, url = '/')
+    return render_template('home.html', title = "Home Tab", row = rows, country = ethinicty_country_item, url = '/')
 
 @app.route('/country/<int:id>')
 def country(id):
@@ -33,8 +33,7 @@ def country(id):
     rows = cur.fetchall(); 
     items = (rows[id-1])
     cur.execute("SELECT ethnicityid, id, name FROM Country ORDER BY ethnicityid;")
-    row2s = cur.fetchall();
-    print (row2s)
+    row2s = cur.fetchall(); 
     id = []
     t = None
     for i in row2s:
@@ -43,9 +42,24 @@ def country(id):
         else:
             t = i[0]
             id.append([i])
-    print(id)
+    cur.execute("SELECT building.photo, building.id, building.name,  FROM country JOIN building ON country.id = building.countryid ORDER BY country.id")
+    row3s = cur.fetchall(); 
+    builds = []
+    for i in row3s:
+        if i[0] == t:
+            builds[-1].append(i)
+        else:
+            t = i[0]
+            builds.append([i])
     return render_template('country.html', title = "Country Tab", row = rows, item = items, id1 = id[0], id2 = id[1], id3 = id[2], id4 = id[3], id5 = id[4])
 
+@app.route('/building/<int:id>')
+def building(id):
+    con = sql.connect("./historical_architecture.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM building;")
+    rows = cur.fetchall(); 
+    return render_template('building.html', title = "Building Tab", row = rows)
 
 if __name__ == "__main__": 
     app.run(debug = True)

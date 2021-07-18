@@ -49,6 +49,15 @@
     <div class='country-text'>
         {{item[4]}}
     </div>
+
+    <div class= 'parent-link-country'>
+        {% for buildid in build[row[0]-1] %}
+        <a href='\country\{{row[2]}}' class = 'link-country'>
+            {{countryid[1]}}
+            <img class='country-img' src="{{row[0]}}" alt="{{row[1]}}">
+        </a>
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock %}
