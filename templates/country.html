@@ -49,15 +49,15 @@
     <div class='country-text'>
         {{item[4]}}
     </div>
+</div>
 
-    <div class= 'parent-link-country'>
-        {% for buildid in build[row[0]-1] %}
-        <a href='\country\{{row[2]}}' class = 'link-country'>
-            {{countryid[1]}}
-            <img class='country-img' src="{{row[0]}}" alt="{{row[1]}}">
-        </a>
-        {% endfor %}
-    </div>
+<div class= 'parent-link-building'>
+    {% for buildid in build[item[0]-1] %}
+    <a href='\building\{{buildid[1]}}' class = 'link-building'>
+        <div class = link-building-text>{{buildid[2]}}</div>
+        <img class='country-img' src="{{buildid[0]}}" alt="{{buildid[2]}}">
+    </a>
+    {% endfor %}
 </div>
 
 {% endblock %}

@@ -22,7 +22,6 @@ def home():
         else:
             t = i[0]
             ethinicty_country_item.append([i])
-    print(ethinicty_country_item)
     return render_template('home.html', title = "Home Tab", row = rows, country = ethinicty_country_item, url = '/')
 
 @app.route('/country/<int:id>')
@@ -42,7 +41,7 @@ def country(id):
         else:
             t = i[0]
             id.append([i])
-    cur.execute("SELECT building.photo, building.id, building.name,  FROM country JOIN building ON country.id = building.countryid ORDER BY country.id")
+    cur.execute("SELECT building.photo, building.id, building.name FROM country JOIN building ON country.id = building.countryid ORDER BY country.id")
     row3s = cur.fetchall(); 
     builds = []
     for i in row3s:
@@ -51,7 +50,7 @@ def country(id):
         else:
             t = i[0]
             builds.append([i])
-    return render_template('country.html', title = "Country Tab", row = rows, item = items, id1 = id[0], id2 = id[1], id3 = id[2], id4 = id[3], id5 = id[4])
+    return render_template('country.html', title = "Country Tab", row = rows, item = items, id1 = id[0], id2 = id[1], id3 = id[2], id4 = id[3], id5 = id[4], build = builds)
 
 @app.route('/building/<int:id>')
 def building(id):

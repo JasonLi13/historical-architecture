@@ -221,6 +221,26 @@ body{
     margin-left: 7%; 
 }
 
+.parent-link-building{
+    display:flex;
+    margin:10%;
+    height: 20vw;
+}
+
+.link-building{
+    display: inline-block;
+    padding: 10px;
+    width: 33%;
+    position: relative;
+}
+
+.link-building-text{
+    display: left;
+    background: black;
+    color: white;
+    position: absolute;
+    
+}
 /* footer */
 .footer{
     color: white;
