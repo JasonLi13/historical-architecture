@@ -1,4 +1,5 @@
 {% if request.path == '/' %}
+<!--nav bar for home page that links to different sections-->
 <div class='topnav'>
     <a href="#antiquity" class='button'>ANTIQUITY</a>
     <a href="#islamic" class='button'>ISLAMIC</a> 
@@ -8,6 +9,7 @@
 </div>
 {% endif %}
 
+<!--nav bar for countries in antiquity-->
 {% if request.path == '/country/1' or request.path == '/country/2' or request.path == '/country/11' or request.path == '/country/12' %}
 <div class='topnav'>
     {% for item in id1 %}
@@ -16,6 +18,7 @@
 </div>
 {% endif %}
 
+<!--nav bar for coutries in islamic-->
 {% if request.path == '/country/3' or request.path == '/country/4' or request.path == '/country/13' or request.path == '/country/14' %}
 <div class='topnav'>
     {% for item in id2 %}
@@ -24,6 +27,7 @@
 </div>
 {% endif %}
 
+<!--nav bar for countries in americas-->
 {% if request.path == '/country/7' or request.path == '/country/8' or request.path == '/country/17' or request.path == '/country/18' %}
 <div class='topnav'>
     {% for item in id3 %}
@@ -32,6 +36,7 @@
 </div>
 {% endif %}
 
+<!--nav bar for countries in asian-->
 {% if request.path == '/country/9' or request.path == '/country/10' or request.path == '/country/15' or request.path == '/country/16' %}
 <div class='topnav'>
     {% for item in id4 %}
@@ -40,6 +45,7 @@
 </div>
 {% endif %}
 
+<!--nav bar for countries in european-->
 {% if request.path == '/country/5' or request.path == '/country/6' or request.path == '/country/19' or request.path == '/country/20' %}
 <div class='topnav'>
     {% for item in id5 %}

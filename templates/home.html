@@ -1,5 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
+
+<!--creates parallax effects with title-->
 {% for ethnicityid in row %}
 <div class='parallex' id='{{ethnicityid[1]}}' style = 'background-image: url({{ethnicityid[3]}})'>
     <div class='align-middle'>
@@ -7,8 +9,16 @@
             {{ethnicityid[1]}}
         </span>
     </div>
+    <!--scroll down arrow-->
+    <svg class = arrows>
+        <path class="a1" d="M0 0 L30 32 L60 0"></path>
+        <path class="a2" d="M0 20 L30 52 L60 20"></path>
+        <path class="a3" d="M0 40 L30 72 L60 40"></path>
+    </svg>
 </div>
 
+
+<!--body div with infomation-->
 <div class='body-paragraph'>
     <div class='body-title'>
         {{ethnicityid[1]}}
@@ -18,6 +28,7 @@
     </div>
 </div>
 
+<!--photo with links to country page-->
 <div class= 'parent-link-country'>
     {% for countryid in country[ethnicityid[0]-1] %}
     <a href='\country\{{countryid[3]}}' class = 'link-country'>
