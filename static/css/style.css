@@ -21,43 +21,12 @@
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     transition: background-color 0.5s, color 0.3s;
+    cursor: pointer;
 }
 
 body{
     margin:0;
     background-color: black;
-}
-
-/* ethinicity page css*/
-.body-paragraph{
-    padding-top: 10vh;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    margin-left: 15vw;
-    margin-right: 15vw;
-    background-image:linear-gradient(to right, black, rgb(37, 37, 37), black);
-    text-align: center;
-}
-
-
-.parallex{
-    height: 100vh;
-    min-width: 100%;
-    background-attachment: fixed;   
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -50;
-    position: relative;
-}
-
-
-.align-middle{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    
 }
 
 /* scroll down arrow */
@@ -99,6 +68,39 @@ body{
 .arrows path.a3 {	
 	animation-delay:0s;
 	-webkit-animation-delay:0s;}
+
+
+/* ethinicity page css*/
+.body-paragraph{
+    padding-top: 10vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    background-image:linear-gradient(to right, black, rgb(37, 37, 37), black);
+    text-align: center;
+}
+
+
+.parallex{
+    height: 100vh;
+    min-width: 100%;
+    background-attachment: fixed;   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -50;
+    position: relative;
+}
+
+
+.align-middle{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    
+}
 
 .title{
     padding:24px 48px;
@@ -149,6 +151,7 @@ body{
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     transition: background-color 0.5s, color 0.3s;
+    cursor: pointer;
 }
 
 /* country page css */
@@ -209,6 +212,7 @@ body{
 .country-side:hover > .icon{
     background: black;
     mix-blend-mode: difference;
+    cursor: pointer;
 }
 
 .country-side-item{
@@ -268,21 +272,115 @@ body{
 }
 
 .link-building{
+    margin: 10px;
     display: inline-block;
-    padding: 10px;
-    width: 33%;
+    width: 40%;
+    height: 300px;
+    border: 1px solid white;
+    overflow: hidden;
     position: relative;
 }
 
-.link-building-text{
-    display: left;
-    background: black;
-    color: white;
-    position: absolute;
-    
+.link-building-img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transition: all .5s;
 }
 
+.link-building:hover .link-building-img, .link-country:focus .link-building-img{
+    transform:scale(1.2);
+}
 
+.link-building-img::before{
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(52, 73, 94, 0.75);
+    cursor: pointer;
+}
+
+.link-building:hover .link-building-img::before, .link-building:focus .link-building-img::before{
+    display: block;
+}
+
+.link-building-text{
+    color: white !important; 
+    font-family: sans-serif;
+    padding: 25%;
+    position: absolute;
+    font-size: 15px;
+    display:none; 
+}
+
+.link-building:hover .link-building-text, .link-building:focus .link-building-text{
+    display: block;
+}
+
+/* building */
+
+.padding{
+    margin-top: 16px;
+    padding-left: 3%;
+    padding-top: 0px;
+    padding-right: 3%;
+    padding-bottom: 0px;
+}
+
+.building-side-bar{
+    width:25%;
+    margin:0;
+    position: fixed;
+    height: 100%;
+    padding-left: 8px;
+    padding-top: 0px;
+    padding-right: 8px;
+    padding-bottom: 0px;
+}
+
+.container{
+    position: relative;
+    display: block;
+    line-height: 1.5;
+    background-color:rgb(37, 37, 37);
+    box-shadow:rgb(255, 255, 255);
+    line-height: 1.5;
+    font-size: 15px;
+    height: 95%;
+}
+
+.building-side-img{
+    width: 100%;
+    height: auto;
+    float: left;
+    text-align: center;
+    color:white;
+    text-decoration: none;
+    padding: 0;
+}
+
+.building-side-title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration-line: underline;
+    font-size: 17px;
+}
+
+.building-side-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: grey;
+    display: block;
+    padding: 10px;
+}
+
+.building-body{
+    float: left;
+    width: 75%;
+}
 /* footer */
 .footer{
     color: white;

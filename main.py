@@ -59,7 +59,7 @@ def country(id):
         else:
             t = i[0]
             builds.append([i])
-    return render_template('country.html', title = "Country Tab", row = rows, item = items, id1 = id[0], id2 = id[1], id3 = id[2], id4 = id[3], id5 = id[4], build = builds)
+    return render_template('country.html', title = "Country Tab", item = items, id1 = id[0], id2 = id[1], id3 = id[2], id4 = id[3], id5 = id[4], build = builds)
 
 #building page function
 @app.route('/building/<int:id>')
@@ -69,7 +69,8 @@ def building(id):
     #get all data from building table from sql database
     cur.execute("SELECT * FROM building;")
     rows = cur.fetchall(); 
-    return render_template('building.html', title = "Building Tab", row = rows)
+    items = (rows[id-1])
+    return render_template('building.html', title = "Building Tab", item = items)
 
 #print out possible python error
 if __name__ == "__main__": 
