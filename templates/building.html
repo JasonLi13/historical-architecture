@@ -3,20 +3,51 @@
 <!--left side div with description and img-->
 <div class = 'padding'>
     <div class ='building-side-bar'>
-        <div class = 'container'>
-            <img class = 'building-side-img' src = '{{item[5]}}' alt = '{{item[1]}}'>
-            <div class=building-side-title>{{item[1]}}</div>
-            <div class=building-side-text>{{item[2]}}</div>
-            <div class=building-side-text>{{item[3]}}</div>
-            <div class=building-side-text>{{item[4]}}</div>
+        <div class ='building-side-pad'>
+            <div class = 'container'>
+                <img class = 'building-side-img' src = '{{item[5]}}' alt = '{{item[1]}}'>
+                <div class =building-side-title>{{item[1]}}</div>
+                <img src ='/static/icon/time.png' class = building-icon alt ='time period icon'>
+                <div class=building-side-text>{{item[2]}}</div>
+                <img src = '/static/icon/geography.png' class = building-icon alt = 'location icon'>
+                <div class=building-side-text>{{item[3]}}</div>
+                <img src = '/static/icon/person.png' class = building-icon alt = 'designer icon'>
+                <div class=building-side-text>{{item[4]}}</div>
+            </div>
         </div>
     </div>
     <div class='building-body'>
-        <div class ='building-design-div'>
-            hi
-        </div>
-        <div class = building-uses-div>
-            hi
+        <div class="building-side-pad">
+            <div class ='building-design-div'>  
+                <div class = 'building-title'>
+                    design
+                </div>
+                <div class = 'building-text'>
+                    <div class = 'building-text-title'>design</div>
+                    {{item[7]}}
+                </div>
+                <hr>
+                <div class = 'building-text'>
+                    <div class = building-text-title>material</div>
+                    {{item[9]}}
+                </div>
+                <br>
+            </div>
+            <div class = building-uses-div>
+                <div class = 'building-title'>
+                    history
+                </div>
+                <div class = 'building-text'>
+                    <div class = 'building-text-title'>history</div>
+                    {{item[8]}}
+                </div>
+                <hr>
+                <div class = 'building-text'>
+                    <div class = 'building-text-title'>uses</div>
+                    {{item[10]}}
+                </div>
+                <br>
+            </div>
         </div>
     </div>
     
