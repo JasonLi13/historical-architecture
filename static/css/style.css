@@ -321,6 +321,26 @@ body{
 
 /* building */
 
+.building-icon-bar{
+    float: left;
+    height: 100vh;
+    width: 3%;
+}
+
+.building-home{
+    float: left;
+    width: 100%;
+    color: white;
+    text-decoration-line: none;
+    position: sticky;
+    top: 10px;
+}
+
+.build-home{
+    width: 100%;
+    padding:0px;
+}
+
 .padding{
     margin-top: 16px;
     padding-left: 3%;
@@ -395,7 +415,7 @@ body{
     padding-right: 10px;
 }
 
-.building-uses-div{
+.building-history-div{
     background-color: rgb(37, 37, 37);
     padding-left: 10px;
     padding-right: 10px;

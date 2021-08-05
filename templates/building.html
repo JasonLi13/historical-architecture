@@ -1,7 +1,16 @@
 {% extends 'layout.html' %}
 {% block content %}
-<!--left side div with description and img-->
+
+<div class='building-icon-bar'>
+    <a href='\' class= 'building-home'>
+        <img src='\static\icon\home.png' alt='home_icon' class='build-home'>
+        HOME
+    </a>
+</div>
+
+<!--building body-->
 <div class = 'padding'>
+    <!--left side div with description and img-->
     <div class ='building-side-bar'>
         <div class ='building-side-pad'>
             <div class = 'container'>
@@ -16,8 +25,10 @@
             </div>
         </div>
     </div>
+    <!--right side div-->
     <div class='building-body'>
         <div class="building-side-pad">
+            <!--design div conatining design and material-->
             <div class ='building-design-div'>  
                 <div class = 'building-title'>
                     design
@@ -33,7 +44,8 @@
                 </div>
                 <br>
             </div>
-            <div class = building-uses-div>
+            <!--building history div contatining history and uses-->
+            <div class = building-history-div>
                 <div class = 'building-title'>
                     history
                 </div>
