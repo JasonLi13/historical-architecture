@@ -1,8 +1,31 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect, flash
 import sqlite3 as sql
+import cgi
 
 app = Flask(__name__)
-country_items = []
+app.secret_key = """b'*a#fdLs1trsxydgcfuv'"""
+country_items = [] 
+
+#search bar function
+@app.route('/search', methods = ['POST'])
+def search():
+    search1= []
+    search = request.form['search']
+    con = sql.connect("./historical_architecture.db")
+    cur = con.cursor()
+    cur.execute("SELECT name,id FROM Building ORDER by id;")
+    row = cur.fetchall(); 
+    for i in row:
+        if i[0] == search:
+            search1.append(i[1])
+        else:
+            pass
+    try: 
+        search2 = 'building/' + str(search1[0])
+    except:
+        search2 = ('/')
+        flash('building page does not exist')
+    return redirect(search2)
 
 #home page function
 @app.route('/')

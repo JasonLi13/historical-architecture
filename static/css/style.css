@@ -13,7 +13,8 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 23px;
+    font-variant-caps: all-petite-caps;
 }
 
 .button:hover{
@@ -22,6 +23,53 @@
     font-family: Arial, Helvetica, sans-serif;
     transition: background-color 0.5s, color 0.3s;
     cursor: pointer;
+}
+
+/*message*/
+.flashes{
+    position: fixed;
+    background-color: rgb(2, 2, 2);
+    color: white;
+    align-items: center;
+    margin-top: 6vh;
+    float: right;
+    margin-left: 79.9%;
+    padding: 10px;
+    border: white solid 2px;
+    /* Safari and Chrome */
+    animation: cssAnimation 0s ease-in 2s forwards;
+}
+
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility: hidden;
+    }
+}
+
+/* search bar */
+
+.top-nav-search{
+    float:right;
+}
+
+form.top-nav-search input{
+    font-size: 23px;
+    margin-top: 8px;
+    float: left;
+    padding: 6px;
+    border: none;
+    width: 80%;
+}
+
+form.top-nav-search button{
+    margin-top: 8px;
+    float: left;
+    background: grey;
+    cursor: pointer;
+    width:15%;
+    height: 100%;
 }
 
 body{
@@ -247,16 +295,6 @@ body{
     opacity: 50%;
     padding-bottom: 10vh;
     letter-spacing: 3px;
-}
-
-.button_country{
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 23px;
-    font-variant-caps: all-petite-caps;
 }
 
 .country-footer{

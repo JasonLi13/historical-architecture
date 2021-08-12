@@ -1,6 +1,16 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class = flashes>
+            {% for message in messages %}
+            <div>{{ message }}</div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
 <!--creates parallax effects with title-->
 {% for ethnicityid in row %}
 <div class='parallex' id='{{ethnicityid[1]}}' style = 'background-image: url({{ethnicityid[3]}})'>

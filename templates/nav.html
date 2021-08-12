@@ -6,6 +6,10 @@
     <a href="#americas" class='button'>AMERICAS</a>
     <a href="#asia" class='button'>ASIA</a>
     <a href="#european" class='button'>EUROPEAN</a>
+    <form class = 'top-nav-search' action="/search" method = "post" style="margin:auto;max-width:300px">
+        <input type='text' placeholder='Search Building..' name = 'search'>
+        <button type = 'submit'><img src ='\static\icon\search.png' style="width:    100%;"></button>
+    </form>
 </div>
 {% endif %}
 
@@ -13,7 +17,7 @@
 {% if request.path == '/country/1' or request.path == '/country/2' or request.path == '/country/11' or request.path == '/country/12' %}
 <div class='topnav'>
     {% for item in id1 %}
-    <a href="/country/{{item[1]}}" class='button_country'>{{item[2]}}</a>
+    <a href="/country/{{item[1]}}" class='button'>{{item[2]}}</a>
     {% endfor %}
 </div>
 {% endif %}
@@ -22,7 +26,7 @@
 {% if request.path == '/country/3' or request.path == '/country/4' or request.path == '/country/13' or request.path == '/country/14' %}
 <div class='topnav'>
     {% for item in id2 %}
-    <a href="/country/{{item[1]}}" class='button_country'>{{item[2]}}</a>
+    <a href="/country/{{item[1]}}" class='button'>{{item[2]}}</a>
     {% endfor %}
 </div>
 {% endif %}
@@ -31,7 +35,7 @@
 {% if request.path == '/country/7' or request.path == '/country/8' or request.path == '/country/17' or request.path == '/country/18' %}
 <div class='topnav'>
     {% for item in id3 %}
-    <a href="/country/{{item[1]}}" class='button_country'>{{item[2]}}</a>
+    <a href="/country/{{item[1]}}" class='button'>{{item[2]}}</a>
     {% endfor %}
 </div>
 {% endif %}
@@ -40,7 +44,7 @@
 {% if request.path == '/country/9' or request.path == '/country/10' or request.path == '/country/15' or request.path == '/country/16' %}
 <div class='topnav'>
     {% for item in id4 %}
-    <a href="/country/{{item[1]}}" class='button_country'>{{item[2]}}</a>
+    <a href="/country/{{item[1]}}" class='button'>{{item[2]}}</a>
     {% endfor %}
 </div>
 {% endif %}
@@ -49,7 +53,7 @@
 {% if request.path == '/country/5' or request.path == '/country/6' or request.path == '/country/19' or request.path == '/country/20' %}
 <div class='topnav'>
     {% for item in id5 %}
-    <a href="/country/{{item[1]}}" class='button_country'>{{item[2]}}</a>
+    <a href="/country/{{item[1]}}" class='button'>{{item[2]}}</a>
     {% endfor %}
 </div>
 {% endif %}
