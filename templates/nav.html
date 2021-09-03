@@ -6,11 +6,62 @@
     <a href="#americas" class='button'>AMERICAS</a>
     <a href="#asia" class='button'>ASIA</a>
     <a href="#european" class='button'>EUROPEAN</a>
-    <form class = 'top-nav-search' action="/search" method = "post" style="margin:auto;max-width:300px">
-        <input type='text' placeholder='Search Building..' name = 'search'>
-        <button type = 'submit'><img src ='\static\icon\search.png' style="width:    100%;"></button>
+    <form autocomplete = 'off' class = 'top-nav-search' action="/search" method = "post" >
+        <div class = 'autocomplete' style="width:300px;">
+            <input type='text' placeholder='Search Building..' name = 'search' id = "myInput" >
+            <button type = 'submit'><img src ='\static\icon\search.png' style="height: 100%; width: 100%;"></button>
+        </div>
     </form>
 </div>
+
+<!--java script for autocomplete funtion-->
+<script>
+    function autocomplete(inp, arr){
+    /*takes in two element. input and array */
+    var currentFocus;
+    /* when someone types in something */
+    inp.addEventListener("input", function(e){
+        var a, b, i, val = this.value;
+        closeALLlists();
+        if(!val) {return false;}
+        currentFocus = -1;
+        /* create element DIV that contatins value */
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        /* append element to autocomplete conatiner */
+        this.parentNode.appendChild(a);
+        for (i = 0; i < arr.length; i++) {
+            /*check if item start with the same letter */
+            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                /*create element for each matching word */
+                b = document.createElement("DIV");
+                /*make the matching letters bold:*/
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                /*insert a input field that will hold the current array item's value:*/
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                /*select the items from the container*/
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeALLlists();
+                });
+            a.appendChild(b);
+            }
+        }
+    });
+    function closeALLlists(element){
+        var x = document.getElementsByClassName("autocomplete-items")
+        for (var i = 0; i < x.length; i++){
+            if (element != x[i] && element != inp) {
+                x[i].parentNode.removeChild(x[i]);
+            }
+        }
+    }   
+}
+    var buildings = {{building|safe}}
+    autocomplete(document.getElementById("myInput"), buildings);
+</script>
 {% endif %}
 
 <!--nav bar for countries in antiquity-->

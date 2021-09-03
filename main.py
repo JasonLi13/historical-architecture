@@ -48,7 +48,15 @@ def home():
         else:
             t = i[0]
             ethinicty_country_item.append([i])
-    return render_template('home.html', title = "Home Tab", row = rows, country = ethinicty_country_item, url = '/')
+    
+    #get all the names of building
+    cur.execute("SELECT building.name FROM building ORDER BY id")
+    row4s = cur.fetchall(); 
+    buildings = []
+    for i in row4s:
+        buildings.append(i[0])
+    print (buildings)
+    return render_template('home.html', title = "Home Tab", row = rows, country = ethinicty_country_item, url = '/', building = buildings)
 
 #country page function
 @app.route('/country/<int:id>')
