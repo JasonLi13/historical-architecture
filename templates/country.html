@@ -62,8 +62,8 @@
 
 <!--picutres with links to the building page-->
 <div class= 'parent-link-building'>
-    {% for buildid in build[item[0]-1] %}
-    <a href='\building\{{buildid[1]}}' class = 'link-building'>
+    {% for buildid in build %}
+    <a href='\building\{{buildid[3]}}' class = 'link-building'>
         <div class='link-building-img' style= 'background-image: url({{buildid[0]}})' alt="{{buildid[2]}}">
             <div class = link-building-text>{{buildid[2]}}</div>
         </div>

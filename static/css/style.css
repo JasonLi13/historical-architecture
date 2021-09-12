@@ -332,18 +332,20 @@ body{
 
 .parent-link-building{
     display:flex;
-    margin-left :10%;
-    height: 20vw;
+    margin-left : 11%;
+    margin-bottom: 10vh;
+    flex-wrap: wrap;
 }
 
 .link-building{
     margin: 10px;
     display: inline-block;
-    width: 40%;
-    height: 300px;
+    flex-basis: 30%;
+    height: 300px;  
     border: 1px solid white;
     overflow: hidden;
     position: relative;
+    text-align: center;
 }
 
 .link-building-img{
@@ -374,10 +376,13 @@ body{
 .link-building-text{
     color: white !important; 
     font-family: sans-serif;
-    padding: 25%;
+    text-align: center;
+    vertical-align: middle;
     position: absolute;
-    font-size: 15px;
-    display:none; 
+    font-size: 25px;
+    width: 100%;
+    top: 40%;
+    display: none;
 }
 
 .link-building:hover .link-building-text, .link-building:focus .link-building-text{
@@ -452,7 +457,7 @@ body{
     display: block;
     padding: 10px;
     text-decoration-line: underline;
-    font-size: 17px;
+    font-size: 25px;
 }
 
 .building-side-text{

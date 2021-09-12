@@ -20,6 +20,7 @@ def search():
             search1.append(i[1])
         else:
             pass
+    #check if building exist
     try: 
         search2 = 'building/' + str(search1[0])
     except:
@@ -71,26 +72,25 @@ def country(id):
     cur.execute("SELECT ethnicityid, id, name FROM Country ORDER BY ethnicityid;")
     row2s = cur.fetchall(); 
     #order so data with same ethnicity id are in same list and the lists are within another list
-    id = []
+    ids = []
     t = None
     for i in row2s:
         if i[0] == t:
-            id[-1].append(i)
+            ids[-1].append(i)
         else:
             t = i[0]
-            id.append([i])
+            ids.append([i])
     #get photo, id and name from building table order by country id fomr country table
-    cur.execute("SELECT building.photo, building.id, building.name FROM country JOIN building ON country.id = building.countryid ORDER BY country.id")
+    cur.execute("SELECT building.photo, country.id, building.name, building.id FROM country JOIN building ON country.id = building.countryid ORDER BY country.id")
     row3s = cur.fetchall(); 
     #order so data with same country id are in same list and the lists are within another list
     builds = []
     for i in row3s:
-        if i[0] == t:
-            builds[-1].append(i)
+        if i[1] == id:
+            builds.append(i)
         else:
-            t = i[0]
-            builds.append([i])
-    return render_template('country.html', title = "Country Tab", item = items, id1 = id[0], id2 = id[1], id3 = id[2], id4 = id[3], id5 = id[4], build = builds)
+            pass
+    return render_template('country.html', title = "Country Tab", item = items, id1 = ids[0], id2 = ids[1], id3 = ids[2], id4 = ids[3], id5 = ids[4], build = builds)
 
 #building page function
 @app.route('/building/<int:id>')
