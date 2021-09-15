@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+<!--flash image if there's no searched building-->
 {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul class = flashes>
