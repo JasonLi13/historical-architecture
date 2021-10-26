@@ -63,7 +63,6 @@ def home():
     buildings = []
     for i in row4s:
         buildings.append(i[0])
-    print (buildings)
     return render_template('home.html', title="Home Tab", row=rows,
                            country=ethinicty_country_item, url='/',
                            building=buildings)
